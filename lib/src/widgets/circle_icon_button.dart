@@ -8,12 +8,14 @@ class CircleIconButton extends StatelessWidget {
   final BoxBorder? border;
   final VoidCallback onPressed;
   final List<BoxShadow>? boxShadow;
+  final Key? keyValue;
 
   CircleIconButton({
     super.key,
     required Widget child,
     EdgeInsets? padding,
     required this.onPressed,
+    this.keyValue,
     this.backgroundColor,
     this.color,
     this.boxShadow,
@@ -29,6 +31,7 @@ class CircleIconButton extends StatelessWidget {
     required IconData icon,
     double? iconSize,
     required this.onPressed,
+    this.keyValue,
     this.backgroundColor,
     this.color,
     this.boxShadow,
@@ -47,6 +50,7 @@ class CircleIconButton extends StatelessWidget {
         border: border,
       ),
       child: MaterialButton(
+        key: keyValue,
         color: backgroundColor,
         shape: const CircleBorder(),
         elevation: 0,
